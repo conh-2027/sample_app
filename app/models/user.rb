@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  attr_accessor :remember_token
   before_save :downcase_email
 
   validates :name, presence: true,  length: { minimum: Settings.user.name.min_length ,
@@ -8,13 +9,38 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: Settings.user.email.max_length },
     format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false}
   validates :password, length: { minimum: Settings.user.password.min_length,
-   maximum: Settings.user.password.max_length },
-   format: { with: VALID_PASSWORD_REGEX}
-
+    maximum: Settings.user.password.max_length },
+    format: { with: VALID_PASSWORD_REGEX}, allow_nil: true
+   
   USER_PARAMS = %i(name email password password_confirmation)
-  
+   
   has_secure_password
   
+  def remember
+    self.remember_token = User.new_token
+    update remember_digest: User.digest(remember_token)
+  end
+
+  def forget
+    update_attributes remember_digest: nil
+  end
+
+  def authenticated? remember_token
+    return false if remember_digest.nil?
+    BCrypt::Password.new(remember_digest).is_password? remember_token
+  end
+  
+  class << self
+    def digest string
+      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+      BCrypt::Password.create string, cost: cost
+    end
+
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
+  end
+
   private
 
   def downcase_email

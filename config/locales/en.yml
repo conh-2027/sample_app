@@ -2,7 +2,7 @@ en:
   static_pages:
     home:
       title: "Home"
-      signup: "Signup"
+      sign_up_now: "Signup now"
       tutorial_rails: "This is tutorial for the Rails"
     help:
       title: "Help"
@@ -16,7 +16,16 @@ en:
     header:
       app_name: "Sample App"
       login: "Login"
-  author: "Ruby on Rails by Nguyen.huu.co"
+      help: "Help"
+      about: "About"
+    header:
+      app_name: "Sample App"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      you_sure: "You sure"
+      logout: "Logout"
+      login: "Login"
   shared:
     error_messages:
       the_form: "The form contains"
@@ -32,7 +41,22 @@ en:
   sessions:
     new:
       login: "Login"
+      remember_me: "Remember me"
   flash:
     success_create: "Success create"
     fail_create: "Fail create"
     not_found: "Not found"
+    login_fail: "Invalid email/password combination!"
+  author: "Ruby on Rails by Nguyen.huu.co"
+  shared:
+    error_messages:
+      the_form: "The form contains"
+      errors: "errors"
+  users:
+    new:
+      signup: "Sign up"
+      create: "Create"
+    index:
+      all_user: "All user"
+    user:
+      delete: "Delete"
