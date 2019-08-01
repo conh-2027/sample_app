@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: %i(show)
+  before_action :load_user, only: %i(show edit)
 
   def index
     @users = User.order(created_at: :desc).page(params[:page])
