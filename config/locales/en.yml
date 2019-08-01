@@ -1,0 +1,9 @@
+en:
+  static_pages:
+    home:
+      title: "Home Page"
+      tutorial_rails: "This is tutorial for the Rails"
+    help:
+      title: "Help Page"
+    about:
+      title: "About Help"
