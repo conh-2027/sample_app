@@ -1,9 +1,16 @@
 en:
   static_pages:
     home:
-      title: "Home Page"
+      title: "Home"
+      signup: "Signup"
       tutorial_rails: "This is tutorial for the Rails"
     help:
-      title: "Help Page"
+      title: "Help"
     about:
-      title: "About Help"
+      title: "About"
+  layouts:
+    footer:
+      ruby_on_rails: "ruby on rails"
+    header:
+      app_name: "Sample App"
+  author: "Ruby on Rails by Nguyen.huu.co"
