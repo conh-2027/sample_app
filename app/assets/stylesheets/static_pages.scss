@@ -2,6 +2,12 @@
 @import 'bootstrap';
 @import 'colors';
 
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   padding-top: 60px;
 }
@@ -79,5 +85,13 @@ footer {
       float: left;
       margin-left: 15px;
     }
+  }
+}
+
+#error_messages {
+  color: $red;
+  ul {
+    color: $red;
+    margin: 0 0 30px;
   }
 }
