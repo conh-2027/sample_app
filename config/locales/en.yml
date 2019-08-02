@@ -79,6 +79,14 @@ en:
       delete: "Delete"
     edit:
       edit: "Change profile"
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow"
+    following:
+      following: "Following"
+    followers:
+      follower: "Followers"
   password_resets:
     edit:
       update_password: "Update password"

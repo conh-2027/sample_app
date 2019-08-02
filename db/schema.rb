@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_143927) do
+ActiveRecord::Schema.define(version: 2019_08_07_021732) do
 
   create_table "microposts", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.text "content"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 2019_08_06_143927) do
     t.datetime "updated_at", null: false
     t.string "picture"
     t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
+
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, :correct_user, only: %i(edit update destroy)
+  before_action :logged_in_user, :correct_user, except: %i(index new create show)
   before_action :admin_user, only: %i(destroy)
   before_action :load_user, only: %i(show edit update)
 
@@ -46,6 +46,20 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
   
+  def following
+    @title = t ".following"
+    @users = @user.following.page(params[:page])
+      .per Settings.users.paging.num_per_page
+    render "show_follow"
+  end
+
+  def followers
+    @title = t ".follower"
+    @users = @user.followers.page(params[:page])
+      .per Settings.users.paging.num_per_page
+    render "show_follow"
+  end
+
   private
 
   def user_params

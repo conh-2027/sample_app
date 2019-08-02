@@ -6,9 +6,10 @@ class Micropost < ApplicationRecord
   mount_uploader :picture, PictureUploader
   validate :picture_size
 
+  belongs_to :user
+  scope :recent, -> {order created_at: :desc }
+  scope :by_user_ids, -> user_ids { where user_id: user_ids}
   delegate :name, to: :user, prefix: true
-
-  scope :recent, -> {order(created_at: :desc)}
 
   private
 
