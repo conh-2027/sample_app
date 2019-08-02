@@ -1,3 +1,14 @@
 rails_host:
   host: "http://railstutorial.org/"
   ruby_on_rails: "http://news.railstutorial.org/"
+user:
+  name:
+    min_length: 5
+    max_length: 50
+  email:
+    max_length: 255
+    regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i'
+  password:
+    min_length: 6
+    max_length: 32
+    regex: !ruby/regexp '/[A-Z][a-z]\d/i'
