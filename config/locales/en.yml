@@ -2,8 +2,9 @@ en:
   static_pages:
     home:
       title: "Home"
-      sign_up_now: "Signup now"
+      signup: "Signup now"
       tutorial_rails: "This is tutorial for the Rails"
+      welcome: "Stay Hungry, Stay Foolish!"
     help:
       title: "Help"
     about:
@@ -62,6 +63,12 @@ en:
     error_messages:
       the_form: "The form contains"
       errors: "errors"
+    user_info:
+      micropost: "Micropost"
+      profile: "My profile"
+    micropost_form:
+      post: "Post"
+      compose_new: "What's status"
   users:
     new:
       signup: "Sign up"
@@ -82,3 +89,15 @@ en:
     update:
       password_emtpy: "can't be empty"
       reset_success: "Password has been reset."
+  microposts:
+    create:
+      micropost_created: "Micropost created"
+    destroy:
+      micropost_delete: "Micropost deleted"
+      micropost_delete_fail: "Micropost delete fail"
+    micropost:
+      you_sure: "You sure?"
+    picture_size:
+      uploader_error: "should be less than 5MB"
+  alert:
+    size: "Maximum file size is 5MB. Please choose a smaller file"

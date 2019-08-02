@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, :correct_user, only: %i(edit update)
+  before_action :logged_in_user, :correct_user, only: %i(edit update destroy)
   before_action :admin_user, only: %i(destroy)
   before_action :load_user, only: %i(show edit update)
 
@@ -21,6 +21,11 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @microposts = @user.microposts.recent.page(params[:page])
+      .per Settings.microposts.paging.num_per_page
   end
 
   def update
@@ -52,13 +57,6 @@ class UsersController < ApplicationController
     return if @user
     flash[:danger] = t "flash.not_found"
     redirect_to root_url
-  end
-
-  def logged_in_user
-    return if logged_in?
-    store_location
-    flash[:danger] = t "flash.please"
-    redirect_to login_url
   end
 
   def admin_user
