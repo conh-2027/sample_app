@@ -1,0 +1,3 @@
+rails_host:
+  host: "http://railstutorial.org/"
+  ruby_on_rails: "http://news.railstutorial.org/"
