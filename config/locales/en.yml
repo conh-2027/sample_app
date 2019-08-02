@@ -11,8 +11,11 @@ en:
   layouts:
     footer:
       ruby_on_rails: "ruby on rails"
+      about: "About"
+      help: "Help"
     header:
       app_name: "Sample App"
+      login: "Login"
   author: "Ruby on Rails by Nguyen.huu.co"
   shared:
     error_messages:
@@ -26,6 +29,9 @@ en:
       all_user: "All user"
     user:
       delete: "Delete"
+  sessions:
+    new:
+      login: "Login"
   flash:
     success_create: "Success create"
     fail_create: "Fail create"
