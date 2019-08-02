@@ -12,3 +12,8 @@ user:
     min_length: 6
     max_length: 32
     regex: !ruby/regexp '/[A-Z][a-z]\d/i'
+  password:
+    min_length: 6
+    max_length: 32
+  paging:
+    num_per_page: 5

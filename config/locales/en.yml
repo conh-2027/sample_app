@@ -14,3 +14,19 @@ en:
     header:
       app_name: "Sample App"
   author: "Ruby on Rails by Nguyen.huu.co"
+  shared:
+    error_messages:
+      the_form: "The form contains"
+      errors: "errors"
+  users:
+    new:
+      signup: "Sign up"
+      create: "Create"
+    index:
+      all_user: "All user"
+    user:
+      delete: "Delete"
+  flash:
+    success_create: "Success create"
+    fail_create: "Fail create"
+    not_found: "Not found"
