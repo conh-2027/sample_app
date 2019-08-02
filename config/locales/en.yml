@@ -42,13 +42,25 @@ en:
     new:
       login: "Login"
       remember_me: "Remember me"
+  user_mailer:
+    acount_activation:
+      sample_app: "Sample App"
+      hi: "Hi"
+      activation: "User activation"
+      content_active: "Welcome to the Sample App! Click on the link below to activate your account:"
+    password_reset:
+      resetpassword: "Reset password"
   flash:
+    success: "Account is activated!"
+    error: "Invalid activation link!"
     success_create: "Success create"
+    active: "Please check e-mail to activate your account"
     success_update: "Success update"
     fail_create: "Fail create"
     not_found: "Not found"
     login_fail: "Invalid email/password combination!"
     please: "Please login"
+    info: "Please check email your to active your account."
   author: "Ruby on Rails by Nguyen.huu.co"
   shared:
     error_messages:
