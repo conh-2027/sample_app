@@ -17,3 +17,4 @@ user:
     max_length: 32
   paging:
     num_per_page: 5
+remember_me: "1"
