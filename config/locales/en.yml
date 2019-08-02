@@ -14,11 +14,8 @@ en:
       about: "About"
       help: "Help"
     header:
-      app_name: "Sample App"
-      login: "Login"
       help: "Help"
       about: "About"
-    header:
       app_name: "Sample App"
       account: "Account"
       profile: "Profile"
@@ -26,18 +23,6 @@ en:
       you_sure: "You sure"
       logout: "Logout"
       login: "Login"
-  shared:
-    error_messages:
-      the_form: "The form contains"
-      errors: "errors"
-  users:
-    new:
-      signup: "Sign up"
-      create: "Create"
-    index:
-      all_user: "All user"
-    user:
-      delete: "Delete"
   sessions:
     new:
       login: "Login"
@@ -50,6 +35,12 @@ en:
       content_active: "Welcome to the Sample App! Click on the link below to activate your account:"
     password_reset:
       resetpassword: "Reset password"
+      link_reset: "To reset your password click the link below:"
+      expire_reset: "This link will expire in two hours."
+      not_reset: "If you did not request your password to be reset, please ignore this email and
+        your password will stay as it is."
+      password_reset: "Password reset"
+      reset_password: "Reset passwod"
   flash:
     success: "Account is activated!"
     error: "Invalid activation link!"
@@ -58,9 +49,14 @@ en:
     success_update: "Success update"
     fail_create: "Fail create"
     not_found: "Not found"
+    email_not_found: "Email not exist"
     login_fail: "Invalid email/password combination!"
     please: "Please login"
+    expired_reset: "Password reset has expired."
+    email_valid: "Email validation"
     info: "Please check email your to active your account."
+    sent_password_reset: "Email sent with password reset instructions"
+    please_checl_email: "Please check email your to active your account."
   author: "Ruby on Rails by Nguyen.huu.co"
   shared:
     error_messages:
@@ -76,3 +72,13 @@ en:
       delete: "Delete"
     edit:
       edit: "Change profile"
+  password_resets:
+    edit:
+      update_password: "Update password"
+      reset_password: "Reset password"
+    new:
+      submit: "Submit"
+      forgot_password: "Forgot passwords"
+    update:
+      password_emtpy: "can't be empty"
+      reset_success: "Password has been reset."

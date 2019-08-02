@@ -1,7 +1,8 @@
 rails_host:
   host: "http://railstutorial.org/"
   ruby_on_rails: "http://news.railstutorial.org/"
-user:
+users:
+  expired_time: 2
   name:
     min_length: 5
     max_length: 50
@@ -12,9 +13,6 @@ user:
     min_length: 6
     max_length: 32
     regex: !ruby/regexp '/[A-Z][a-z]\d/i'
-  password:
-    min_length: 6
-    max_length: 32
   paging:
     num_per_page: 5
 remember_me: "1"

@@ -1,16 +1,16 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
 
-  validates :name, presence: true,  length: { minimum: Settings.user.name.min_length ,
-   maximum: Settings.user.name.max_length }
-  VALID_EMAIL_REGEX =  Settings.user.email.regex
-  VALID_PASSWORD_REGEX = Settings.user.password.regex
-  validates :email, presence: true, length: { maximum: Settings.user.email.max_length },
+  VALID_EMAIL_REGEX =  Settings.users.email.regex
+  VALID_PASSWORD_REGEX = Settings.users.password.regex
+  validates :name, presence: true,  length: { minimum: Settings.users.name.min_length ,
+   maximum: Settings.users.name.max_length }
+  validates :email, presence: true, length: { maximum: Settings.users.email.max_length },
     format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false}
-  validates :password, length: { minimum: Settings.user.password.min_length,
-    maximum: Settings.user.password.max_length },
+  validates :password, length: { minimum: Settings.users.password.min_length,
+    maximum: Settings.users.password.max_length },
     format: { with: VALID_PASSWORD_REGEX}, allow_nil: true
    
   USER_PARAMS = %i(name email password password_confirmation)
@@ -30,13 +30,26 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
 
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now
+  end
+
+  def password_reset_expired?
+    reset_sent_at < Settings.users.expired_time.hours.ago
+  end
+
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
   def forget
     update remember_digest: nil
   end
 
   def authenticated? attribute,token
     digest = self.send("#{attribute}_digest")
-    return false if digest.nil?
+    return false unless digest
     BCrypt::Password.new(digest).is_password? token
   end
   
