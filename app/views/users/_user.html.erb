@@ -2,5 +2,7 @@
   <%= link_to gravatar_for(user), user_path(user) %>
   <%= user.name %>
   <%= user.email %>
-  <%= link_to t(".delete"), "#" %>
+  <% if current_user.admin? && !user.admin %>
+    <%= link_to t(".delete"), user_path(user), method: :delete, data: { confim: t(".you_sure") } %>
+  <% end %>
 </li>

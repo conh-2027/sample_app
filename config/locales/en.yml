@@ -44,9 +44,11 @@ en:
       remember_me: "Remember me"
   flash:
     success_create: "Success create"
+    success_update: "Success update"
     fail_create: "Fail create"
     not_found: "Not found"
     login_fail: "Invalid email/password combination!"
+    please: "Please login"
   author: "Ruby on Rails by Nguyen.huu.co"
   shared:
     error_messages:
@@ -60,3 +62,5 @@ en:
       all_user: "All user"
     user:
       delete: "Delete"
+    edit:
+      edit: "Change profile"
