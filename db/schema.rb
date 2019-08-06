@@ -9,8 +9,7 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema.define(version: 2019_08_02_084912) do
+ActiveRecord::Schema.define(version: 2019_08_05_010814) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name"
@@ -20,6 +19,9 @@ ActiveRecord::Schema.define(version: 2019_08_02_084912) do
     t.datetime "updated_at", null: false
     t.string "remember_digest"
     t.boolean "admin", default: false
+    t.string "activation_digest"
+    t.boolean "activated"
+    t.datetime "activated_at"
   end
 
 end
