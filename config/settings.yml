@@ -15,4 +15,15 @@ users:
     regex: !ruby/regexp '/[A-Z][a-z]\d/i'
   paging:
     num_per_page: 5
+microposts:
+  default_size: 50
+  picture_size: "300x150"
+  max_size: 5
+  content:
+    max_length: 140
+  paging:
+    num_per_page: 10
 remember_me: "1"
+shared:
+  micropost_form:
+    row: 5

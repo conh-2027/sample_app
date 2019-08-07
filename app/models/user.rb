@@ -17,6 +17,8 @@ class User < ApplicationRecord
    
   has_secure_password
   
+  has_many :microposts, dependent: :destroy
+
   def remember
     self.remember_token = User.new_token
     update remember_digest: User.digest(remember_token)
@@ -45,6 +47,10 @@ class User < ApplicationRecord
 
   def forget
     update remember_digest: nil
+  end
+
+  def feed
+    Micropost.where("user_id = ?", id)
   end
 
   def authenticated? attribute,token
