@@ -2,6 +2,8 @@ rails_host:
   host: "http://railstutorial.org/"
   ruby_on_rails: "http://news.railstutorial.org/"
 users:
+  show_following:
+    size: 30
   expired_time: 2
   name:
     min_length: 5
